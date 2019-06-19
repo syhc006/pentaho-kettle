@@ -414,6 +414,7 @@ public class ElasticSearchBulk extends BaseStep implements StepInterface {
         if (response != null) {
             responseOk = handleResponse(response);
             requestsBuffer.clear();
+            updateRequestsBuffer.clear();
         } else { // have to assume all failed
             numberOfErrors += currentRequest.numberOfActions();
             setErrors(numberOfErrors);
